@@ -18,16 +18,16 @@ app.get('/', (req, res) => {
 
 app.use('/categoria', categoriaRoutes);
 app.use('/produto', produtoRoutes);
-// app.use('/pedido', pedidoRoutes);
-// app.use('/entrega', entregaRoutes);
-// app.use('/avaliacao', avaliacaoRoutes);
+app.use('/pedido', pedidoRoutes);
+app.use('/entrega', entregaRoutes);
+app.use('/avaliacao', avaliacaoRoutes);
 
 console.log('Rotas registradas:');
 console.log('- /categoria');
 console.log('- /produto');
-// console.log('- /pedido');
-// console.log('- /entrega');
-// console.log('- /avaliacao');
+console.log('- /pedido');
+console.log('- /entrega');
+console.log('- /avaliacao');
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
