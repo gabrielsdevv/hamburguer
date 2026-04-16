@@ -1,7 +1,7 @@
+import { Model, DataTypes } from 'sequelize';
 import sequelize from "./Database.js";
-import { DataTypes, Model } from "sequelize";
 
-export default class Pedido extends Model{
+export default class Pedido extends Model {
     static associate(models){
         Pedido.hasOne(models.Entrega, {
             foreignKey: 'pedido_id',
@@ -12,7 +12,7 @@ export default class Pedido extends Model{
             as: 'avaliacoes',
         });
     }
-};
+}
 
 Pedido.init({
     id:{
@@ -33,10 +33,10 @@ Pedido.init({
         type: DataTypes.STRING,
         allowNull : false
     }
-}, sequelize,
-{
+}, {
+    sequelize,
+    modelName: 'Pedido',
     tableName : 'pedidos',
-    timestamps : true, // criar os campos deleteAt e updatedAt
+    timestamps : true,
     paranoid : true
-}
-)
+});

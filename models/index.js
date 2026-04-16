@@ -4,10 +4,20 @@ import Pedido from './Pedido.js';
 import Entrega from './Entrega.js';
 import Avaliacao from './Avaliacao.js';
 
-const models = [Categoria, Produto, Pedido, Entrega, Avaliacao];
+// Lista de models para associações
+const models = {
+  Categoria,
+  Produto,
+  Pedido,
+  Entrega,
+  Avaliacao
+};
 
+// Configurar associações
 Object.values(models).forEach(model => {
   if (model.associate) {
     model.associate(models);
   }
 });
+
+export default models;

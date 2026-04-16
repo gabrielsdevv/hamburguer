@@ -1,5 +1,5 @@
-import sequelize from "./Database.js";
 import { DataTypes, Model } from "sequelize";
+import sequelize from "./Database.js";
 
 export default class Entrega extends Model {
     static associate(models) {
@@ -25,9 +25,10 @@ Entrega.init({
         type: DataTypes.STRING,
         allowNull : false
     }
-},sequelize,
-{
+}, {
+    sequelize,
+    modelName: 'Entrega',
     tableName : 'entregas',
-    timestamps : true, // criar os campos deleteAt e updatedAt
+    timestamps : true,
     paranoid : true
-})
+});
