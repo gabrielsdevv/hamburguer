@@ -4,8 +4,8 @@ import { DataTypes, Model } from "sequelize";
 export default class Pedido extends Model{
     static associate(models){
         Pedido.hasOne(models.Entrega, {
-            foreignKey: 'pedido_id',
-            as: 'entrega'
+            foreignKey: 'pedidoId',
+            as: 'avaliacao',
         })
     }
 };

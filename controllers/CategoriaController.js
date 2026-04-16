@@ -12,7 +12,10 @@ import Categoria from "../models/Categoria.js";
   findAll: async (req, res) => { 
     try
     {
-      const categorias = await Categoria.findAll();
+      const categorias = await Categoria.findAll({
+  include: [
+    { association: 'produtos' }]
+      });
       if (categorias.length === 0) {
         throw new Error('Nenhuma categoria encontrada');
       }

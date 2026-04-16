@@ -12,10 +12,17 @@ const PedidoController = {
 
     findAll : async (req,res) =>{
         try{
-            const pedidos = await Pedido.findAll();
+            const pedidos = await Pedido.findAll({
+                include: [
+                    { association: 'avaliacao' },
+                    { association: 'entrega' }
+                ]
+            });
+
             if (pedidos.length === 0){
                 throw new Error("Não há pedidos");
             }
+
             res.status(200).json(pedidos);  
         }
         catch(error){

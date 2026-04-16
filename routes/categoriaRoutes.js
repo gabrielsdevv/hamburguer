@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
-import CategoriaController from  '../controllers/CategoriaController.js';
+import CategoriaController from '../controllers/CategoriaController.js';
+import AvaliacaoController from '../controllers/AvaliacaoController.js';
 
 const router = Router();
 
@@ -10,5 +11,7 @@ router.get('/:id', CategoriaController.findById);
 router.put('/:id', CategoriaController.update);
 router.delete('/:id', CategoriaController.delete);
 router.put('/restaure/:id', CategoriaController.restaure);
+
+router.post('/avaliacoes', AvaliacaoController.criar);
 
 export default router;
