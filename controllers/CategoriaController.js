@@ -27,7 +27,9 @@ import Categoria from "../models/Categoria.js";
 
   findById: async (req, res) => { 
     try{
-        const categoria = await Categoria.findByPk(req.params.id);
+        const categoria = await Categoria.findByPk(req.params.id, {
+            include: [{ association: 'produtos' }]
+        });
         if (categoria) {
           res.status(200).json(categoria);
         } else {

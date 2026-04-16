@@ -12,6 +12,6 @@ router.put('/:id', CategoriaController.update);
 router.delete('/:id', CategoriaController.delete);
 router.put('/restaure/:id', CategoriaController.restaure);
 
-router.post('/avaliacoes', AvaliacaoController.criar);
+router.post('/avaliacoes', AvaliacaoController.create);
 
 export default router;
